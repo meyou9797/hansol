@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+
+/*전체none*/
+.Panel,.mcon03Menu04,.mMainCon04{display:none;}
+
+@media screen and (max-width:768px){/*최대768px까지 "모바일"로 보이게 하겠다!*/
+    /*모바일셋팅*/
+    body{min-width:auto;}/*include에서 min-width(웹)설정한거 초기화 시키기 위해 auto값 줬음*/
+    .inner{
+        width:auto; /*include에서 min-width(웹)설정한거 초기화 시키기 위해 auto값 줬음*/
+        margin:0;
+    }
+    /*모바일뷰에서 안보임*/
+    .gnb,.util,.mainCon02,.con03Menu04,.mainCon04,.con05Menu li p,.fLogo,.fInfo{display:none;}
+    
+    /*모바일뷰에서 보임*/
+    .Panel,.mcon03Menu04,.mMainCon04{
+        display:block;
+    }
+    
+    /*이미지사이즈변경*/
+    #header h1,.Panel,.sliderBtn,.con01List li span{
+        background-size:400px !important;/*50%로해도 가능*/
+    }
+    
+    /*헤더*/
+    #header{
+        height:auto;/*자식의 영역만큼 자동으로 세로값 설정되게*/
+        margin:10px 20px;
+    }
+    #header h1{
+        width:70px;
+        height: 28px;
+        background-position:0 0;
+        position:static;/*기본값,띄어져있는거 가라앉히기*/
+    }
+    .Panel{
+        width:16px;
+        height:16px;
+        background:url(../images/sp_com.png)-227px -97px;
+        text-indent: -9999px;
+        position:absolute;
+        right:0;
+        top:6px;/*h1(24px)-panel(16px)=12px의 반=6px,h1기준 정중앙정렬*/
+    }
+    .Panel a{
+        display:block;
+        height: 100%;
+    }
+    
+    /*메인슬라이더*/
+    .mainSlider{
+        margin:0;
+        height: auto;/*내자신만큼 세로값 가지게하기*/
+        padding:45% 0;
+    }
+    .sliderTxt{padding-top:0;}
+    .sliderTxt h2{
+        font-size:14px;
+        font-family:'NotoSans',sans-serif;
+        font-weight:bold;
+    }
+    .sliderTxt p{
+        font-size:11px;
+    }
+    .sliderBtn{
+        width:13px;
+        height:23px;
+        background-position:-64px -30px;
+        margin-top:-12px;
+        
+    }
+    .nextBtn{
+        right:10px;
+        background-position:-79px -30px;
+    }
+    .prevBtn{left:10px;}
+    
+    /*mainCon01*/
+    
+    .mainCon01{padding:20px 0;}
+    .con01List{
+        display:block;/*inline-block이여서 가로값 없어서 block으로*/
+        overflow:hidden;/*웹에서 float:left시키고 cf를 안줬기 때문에 overflow로 대체 */
+    }
+    .con01List li{
+        width:33.33%; /*100퍼센트에 3을 나눴을때 소수로 떨어지기 때문*/
+        margin:0;
+        padding:10px 0;
+    }
+    .con01List li:hover span,.con01List li:hover .con01Icon06{
+        background-position-y:-57px;
+    }
+    .con01List li:hover .con01Icon03{
+        background-position-y:-55px;
+    }
+    .con01List li span{
+        width:33px;
+        height:33px;
+        margin:0 auto;
+    }
+    .con01List li:hover p{
+        color:#333;}
+    
+    .con01Icon01{
+        background-position:-1px -57px;
+    }
+    .con01Icon02{
+        background-position:-37px -57px;
+    }
+    .con01Icon03{
+        background-position:-74px -55px;
+    }
+    .con01Icon04{
+        background-position:-109px -57px;
+    }
+    .con01Icon05{
+        background-position:-145px -57px;
+    }
+    .con01Icon06{
+        background-position:-181px -57px;
+    }
+    
+    /*mainCon03*/
+    .mainCon03{
+        padding:0 10px;/*width값 없어서 스크롤 생기지 않음*/
+    }
+    .con03Menu{
+        width:calc(50% - 5px);
+        height: auto;
+        margin-right:10px;
+        position:relative;
+        margin-bottom:10px;
+    }
+    .con03Menu:nth-child(2n){
+        margin-right:0;
+    }
+    .con03Menu::after{
+        content:"";
+        display:block;
+        padding-bottom:100%;
+    }
+    .con03Menu a{
+        position:absolute;
+        width:100%;
+        height:100%;
+    }
+    .con03Menu h3{
+        padding-top:0;
+        position:absolute;
+        width:100%;
+        top:50%;
+        transform:translate(0,-50%);/*가변일때도 세로중앙정렬 가능하게 해준다.*/
+        font-size:15px;
+        font-family:'NotoSans',sans-serif;
+    }
+    .mcon03Menu04{
+        padding:0;
+        background:none;
+        margin-right:0;
+        background:#999;
+    }
+    .mcon03Menu04 h3{
+        margin-bottom:0;
+    }
+    .con03Menu:hover p{display:none;}
+    /*모바일게시판부분*/
+    .mMainCon04 dl{/*가로값은 픽셀보단 퍼센트값으로 주기*/
+        background:#f2f0ed;
+        height: 45px;
+        line-height:45px;
+        vertical-align:middle;
+        font-size:13px;/*폰트사이즈 상속(dt에는 정해진 폰트사이즈 없음)*/
+        margin:0 10px 10px 10px; /*width100%준곳 없기 때문에 패딩이나 마진 con04,dl,dt아무대나 줘도된다*/
+    }
+    .mMainCon04 dt{
+        display:inline-block;
+        width:20%;
+        text-align: center;
+        color:#2d5b79;
+        font-weight: bold;
+    }
+    .mMainCon04 dd{
+        display:inline-block;/*가로값을 만들어줘야 옆으로 붙음*/
+        width:75%;/*원래 홈페이지에 공백이 조금 있어서 5%(공백)남김*/
+        vertical-align:middle;
+        
+    }
+    .mMainCon04 dd a{
+        display:block;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+    }/*block을 주고나면 ...처리 사라져서 dd에게 ...속성값 가져옴*/
+    
+    /*mainCon05*/
+    .mainCon05{
+        padding:20px 10px 10px 10px;/*width값이 없었기 때문에 box-sizing 주지않아도 쏙 들어옴*/
+        padding-bottom:10px;
+    }
+    .con05Menu li{
+        width:calc(50% - 5px);
+        height: auto;
+        margin-right:10px;
+        margin-bottom:10px;
+        background-size:100% 100%;/*가로세로가 부모값기준으로 딱 맞춰줌(비율 파괴)*/
+    }
+    .con05Menu li:nth-child(2n){
+        margin-right:0;
+    }
+    .con05Menu li h3{
+        padding:70% 0 20% 0;
+        font-size:15px;
+    }
+    
+    /*footer*/
+    .fMenu{
+        text-align:center;
+        line-height: 30px;/*웹에서 line-height 먹혀있어서 행간 조절해줬음*/
+        width:100%;
+    }
+    .fMenu li{
+        float:none;/*세로한줄처리*/
+        display:inline-block;/*두줄처리*/
+    }
+    .fMenu li:first-child::before{display:none;}/*두번째 ul 앞에 선없애줌*/
+    
+    
+    .csFamily{/*web에서 float:right 먹혀있기떄문에 모바일에서 두줄처리되어 보였음*/
+        text-align:center;
+        width:100%;
+    }
+    .csFamily>div{
+        box-sizing: border-box; /*패딩값 때문에 width값 100%채워지지 않았는데도 꽉찬거 정리해줌*/
+        float:none;
+        display:inline-block;
+    }
+    .csBox .num{
+        font-size:11px;
+        margin-top:0;
+        margin-left:0;
+    }
+    .csBox{
+        width:50%;
+    }
+    .familyBox{
+        width:40%;
+        text-align:left;
+        font-size:11px;
+    }
+    .fBottom{padding:30px 0;}
+}
+/*아이폰5 그외 작은사이즈*/
+@media screen and (max-width:320px){
+    #footer{letter-spacing:-1px;}
+}

@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+*{
+    outline:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,dt{margin:0;}
+body{
+    min-width: 1200px; /*화면에서 보이는 최소값*/
+    color:#333;
+}
+*{} /*전체선택자,모든태그,body는 상속시키는 속성이지만 별은 각각*/
+ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+a{
+    text-decoration:none;
+    color:#333;
+}
+
+.inner{
+    width:1200px; /*가로값 필수*/
+    margin:0 auto; /*블락요소에게 중앙정렬 시키는법*/
+}
+.cf::after{
+    content:"";
+    display:block;
+    clear:both;
+}

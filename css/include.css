@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/*헤더*/
+#header{
+    margin:20px 50px;/*화면기준이지만 스크롤 생기지 않고 내 기준 안으로50px들어온다*/
+    height: 43px;/*h1 세로값이 43이라서*/
+    line-height: 43px; /*세로중앙정렬 할때도 43px*/
+    text-align: center;/*정중앙 정렬시키기 위해*/
+    position:relative;
+}
+
+#header h1{
+    width:110px;
+    height: 43px;
+    background:url(../images/sp_com.png) no-repeat -300px -5px;
+    text-indent:-9999px;
+    position:absolute;/*제자리에서 떳기때문에 위치값 주지 않아도됌*/
+}
+#header h1 a{
+    display:block;/*텍스트 속성을 먹어서 같이 밀려나기 때문에 블락을 줘서 고정*/
+}
+
+.gnb{
+    display:inline-block; /*cf를 주지 않은 이유*/
+}
+.gnb li{
+    float:left;/*마진0오토를 주려면 가로값이 있어야하지만 텍스트의 길이를 알 수없기 때문에*/
+    margin:0 20px;/*정중앙에서 양옆으로 퍼지게 여백주기*/
+}
+.gnb li:hover a{ /*.gnb li를 호버 했을때,각각의li*/
+    border-bottom:3px solid #2d5b79;
+    color:#2d5b79;
+}
+.gnb li a{display:block;}
+
+.util{
+    position:absolute;
+    right:0;
+    top:0;
+    font-size:12px;
+}
+.util li{
+    float:left;/*왼쪽으로 나열*/
+}
+.util li::after{/*util li뒤에 bar 만들기*/
+    content:"";
+    display:inline-block;/*블락을 주면 옆으로 떨어짐*/
+    width:1px;
+    height: 8px;
+    background:#999;
+    margin:0 5px; /*패딩을 주면 두꺼워짐*/
+}
+.util li:last-child::after{display:none;}/*마지막 bar 없애기*/
+.util li a{}
+
+/*푸터*/
+#footer{
+    color:#fff;
+    font-size:13px;
+}
+
+.fTop{
+    background:#383f43;
+    line-height:40px;/*정렬*/
+    padding:10px 0px;
+}
+.fMenu{
+    float:left;
+}
+.fMenu li{
+    float:left;
+}
+.fMenu li::before{/*선만들기,비포로줬으니 선이 앞에 생김*/
+    content:"";
+    display:inline-block;/*블락으로하면 뚝 떨어지기 때문에 인라인으로*/
+    width:1px;
+    height: 10px;
+    background:#fff;
+    margin:0 5px;
+}
+.fMenu li a{
+    color:#fff;
+}
+.lineNone li:first-child::before{display:none;}
+.csFamily{
+    float:right;
+}
+.csFamily>div{
+    float:left;
+    height:40px;
+    padding:0 15px;
+}
+.csBox{
+    background:#2A3033;
+}
+.csBox span{/*스판에 p태그를 감싼이유 : 정확한 스판을 잡기위해, 밑에있는 p태그가 선택대기 때문*/
+    vertical-align:middle;/*한글과 숫자의 베이스라인이 다르기 때문에 정확한 중앙정렬 되지않음*/
+}
+.csBox .num{
+    font-size:22px;
+    margin-left:10px;
+}
+.csBox a{color:#fff;}
+.familyBox{
+    width: 150px;
+    background:#fff url(../images/arrow.png)no-repeat 95% center;
+    color:#333;
+    margin-left:10px;
+}
+
+.fBottom{
+    background:#4c5459;
+    text-align: center;
+    padding:70px 0;
+    
+}
+.fBottom p{}
+.fLogo{
+    width:130px;
+    height: 50px;
+    background:url(../images/sp_com.png) no-repeat -150px 0;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+.fInfo{}
+.fInfo span::after{
+    content:"";
+    display:inline-block;
+    width: 1px;
+    height: 10px;
+    background:#fff;
+    margin:0 5px;
+}
+.fInfo span:last-child::after{display:none;}
+.fInfo span{}
